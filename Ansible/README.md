@@ -1,15 +1,10 @@
-## Roles:
-A **role** is a playbook dedicated to a single task, such as installing Filebeat. A role might be responsible for performing the following tasks:
-- Downloading and unarching a file.
-- Installing software.
-- Copying configuration files into place.
-- Starting services.
+## Webserver Playbook Roles:
 
-For example, the **[Webserver playbook](/Ansible/webserver.yml)** will install and enable `dwva`, `filebeat`, and `metricbeat` on the Webserver VM's
+As written, the **[Webserver playbook](/Ansible/webserver.yml)** will install and enable `dwva`, `filebeat`, and `metricbeat` on the Webserver VM's
 
-Each role directory must be configured with its own contents, and the corresponding directories contain all the files needed for the project.
+Each role directory must be configured with its own contents, and the corresponding directories contain all the files needed.
 
-### Directory structure:
+### Directory Structure:
 
 ```
 /etc/
