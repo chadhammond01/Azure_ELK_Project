@@ -11,7 +11,7 @@ This document contains the following details:
 ---
 ### Description of the Topology
 
-The files in this repository were used to configure the network in Azure as depicted below.
+The files in this repository were used to configure the IaC network in Azure as depicted below.
 
 ![Network Diagram](Diagrams/Azure%20Network%20Diagram.PNG)
 
@@ -195,10 +195,10 @@ After this, the commands below run the playbook:
  ```bash
  $ cd /etc/ansible
  $ ansible-playbook webserver.yml webservers
- $ ansible-playbook elkserver.yml elk
+ $ ansible-playbook elkserver.yml elkservers
  ```
  
-To verify successfull installation on the webservers, run `curl http://10.0.0.6:80/setup.php`. If the installation succeeded, this command should print HTML to the console.
+To verify successfull installation of the webservers, run `curl http://10.0.0.6:80/setup.php`. If the installation succeeded, this command should print HTML to the console.
 
-To verify success of the ELK server, wait five minutes to give ELK time to start up.  
+To verify successfull installation of the ELK server, wait five minutes to give ELK time to start up.  
 Then, run: `curl http://10.1.0.5:5601/app/kibana`. If the installation succeeded, this command should print HTML to the console.
