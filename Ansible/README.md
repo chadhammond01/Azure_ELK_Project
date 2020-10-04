@@ -50,7 +50,7 @@ SSH into the control node and follow the steps below:
 - Copy the playbooks to the Ansible Control Node
 - Run each playbook on the appropriate targets
 
-The easiest way to copy the playbooks is to use Git:
+The easiest way to copy the playbooks is to use Git. This will copy the playbooks and required files to the correct place:
 
 ```bash
 $ cd /etc/ansible
@@ -60,14 +60,12 @@ $ git clone https://github.com/chadhammond01/Azure_ELK_Project.git
 $ cp Azure_ELK_Project/Ansible/* -R .
 ```
 
-This copies the playbooks and required files to the correct place.
-
 Next, you must edit the `hosts` file to specify which VMs to run each playbook on. For example:
 
 ```
  [webservers]
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-10.0.0.7 ansible_python_interpreter=/usr/bin/python3clear
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 ```
 
 After this, the commands below run the playbook:
