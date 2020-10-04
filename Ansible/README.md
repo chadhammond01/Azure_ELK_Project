@@ -62,14 +62,12 @@ $ cp Azure_ELK_Project/Ansible/* -R .
 
 This copies the playbooks and required files to the correct place.
 
-Next, you must edit the `hosts` file to specify which VMs to run each playbook on.
+Next, you must edit the `hosts` file to specify which VMs to run each playbook on. For example:
 
 ```
  [webservers]
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-10.0.0.7 ansible_python_interpreter=/usr/bin/python3
-10.1.0.6 ansible_python_interpreter=/usr/bin/python3
-10.1.0.7 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3clear
 ```
 
 After this, the commands below run the playbook:
