@@ -202,3 +202,5 @@ To verify successfull installation of the webservers, run `curl http://10.0.0.6:
 
 To verify successfull installation of the ELK server, wait five minutes to give ELK time to start up.  
 Then, run: `curl http://10.1.0.5:5601/app/kibana`. If the installation succeeded, this command should print HTML to the console.
+
+![Kibana](Images/kibana.PNG)
