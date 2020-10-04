@@ -42,3 +42,39 @@ Each role directory must be configured with its own contents, and the correspond
         files/
           metricbeat-config.yml
 ```
+---
+### Using the Playbook
+In order to use the playbooks, you will need to have an Ansible Control Node already configured. The diagramed **Jump Box** has been configured for this purpose. 
+
+SSH into the control node and follow the steps below:
+- Copy the playbooks to the Ansible Control Node **(Jump Box)**
+- Run each playbook on the appropriate targets
+
+The easiest way to copy the playbooks is to use Git:
+
+```bash
+$ cd /etc/ansible
+# Clone Repository + IaC Files
+$ git clone https://github.com/chadhammond01/Azure_ELK_Project.git
+# Move Playbooks, roles, and hosts files Into `/etc/ansible`
+$ cp Azure_ELK_Project/Ansible/* -R .
+```
+
+This copies the playbooks and required files to the correct place.
+
+Next, you must edit the `hosts` file to specify which VMs to run each playbook on.
+
+```
+ [webservers]
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+10.1.0.6 ansible_python_interpreter=/usr/bin/python3
+10.1.0.7 ansible_python_interpreter=/usr/bin/python3
+```
+
+After this, the commands below run the playbook:
+
+ ```bash
+ $ cd /etc/ansible
+ $ ansible-playbook webserver.yml webservers
+ ```
