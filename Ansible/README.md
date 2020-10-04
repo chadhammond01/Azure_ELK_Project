@@ -1,6 +1,6 @@
 ## Webserver Playbook Roles:
 
-As written, the **[Webserver playbook](/Ansible/webserver.yml)** will install and enable `dwva`, `filebeat`, and `metricbeat` on the Webserver VM's
+As written, the **[Webserver playbook](/Ansible/webserver.yml)** will install and enable `dwva`, `filebeat`, and `metricbeat` roles on the Webserver VM's
 
 The playbook is duplicated below.
 
@@ -15,7 +15,7 @@ The playbook is duplicated below.
     - metricbeat
 ```
 
-#### Directory Structure:
+#### Directory Structure for Roles:
 
 Each role directory must be configured with its own contents, and the corresponding directories contain all the files needed.
 
