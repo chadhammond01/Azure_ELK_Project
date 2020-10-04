@@ -12,11 +12,9 @@ This document contains the following details:
 
 The files in this repository were used to configure the network in Azure as depicted below.
 
-![Network Diagram](https://github.com/chadhammond01/Azure_ELK_Project/blob/main/Diagrams/Azure%20Network%20Diagram.PNG)
+![Network Diagram](Diagrams/Azure%20Network%20Diagram.PNG)
 
-_Alternatively, select portions of the webservers.yml file may be used to install only certain pieces of it, such as Filebeat._
-
-  - [Webservers Playbook](https://github.com/chadhammond01/Azure_ELK_Project/tree/main/Ansible)
+_Alternatively, select portions of the **[webservers.yml](Ansible)** file may be used to install only certain pieces of it, such as Filebeat._
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.  
 Load balancing ensures that the application will be highly available by sharing incoming traffic amoung the vulnerable web servers. In addition, inbound access to the network will be restricted through access controls so only authorized users will be able to connect.
@@ -50,7 +48,7 @@ Machines _within_ the network can only be accessed internally.
 
 A summary of the access policies in place can be found in the Azure screenshot below.
 
-![](Images/azurensgrules.png)
+![](Images/azurensgrules.PNG)
 
 ### Elk Configuration
 
@@ -110,7 +108,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![](Images/elkdocker.png)
+![ELK Container](Images/elkdocker.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -127,8 +125,8 @@ The following Beats on these machines:
 - Metricbeat
 
 These beats allow the collection of the following information from each machine:
-- **Filebeat**: Filebeat detects changes to the filesystem. Specifically, we use it to collect Apache logs.
-- **Metricbeat**: Metricbeat detects changes in system metrics, such as CPU usage. We use it to detect SSH login attempts, failed `sudo` escalations, and CPU/RAM statistics.
+- **Filebeat**: Filebeat detects changes to the filesystem. Specifically, used to collect Apache logs.
+- **Metricbeat**: Metricbeat detects changes in system metrics. Detects SSH login attempts, failed `sudo` escalations, and CPU/RAM statistics.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
