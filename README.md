@@ -194,8 +194,8 @@ After this, the commands below run the playbooks:
 
  ```bash
  $ cd /etc/ansible
- $ ansible-playbook elkserver.yml elkservers
- $ ansible-playbook webserver.yml webservers
+ $ ansible-playbook elkserver.yml 
+ $ ansible-playbook webserver.yml 
  ```
  
 To verify successfull installation of the webservers, run `curl http://10.0.0.6:80/setup.php`. If the installation succeeded, this command should print HTML to the console.
