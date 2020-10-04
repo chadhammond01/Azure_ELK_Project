@@ -5,7 +5,7 @@ A **role** is a playbook dedicated to a single task, such as installing Filebeat
 - Copying configuration files into place.
 - Starting services.
 
-For example, the Webserver playbook will run the `dwva`, `filebeat`, and `metricbeat` tasks on the Webserver VM
+For example, the **[Webserver playbook](/webserver.yml)** as written will run the `dwva`, `filebeat`, and `metricbeat` tasks on the Webserver VM
 
 Each role directory must be configured with its own contents, and the corresponding directories contain all the files needed for the project.
 
