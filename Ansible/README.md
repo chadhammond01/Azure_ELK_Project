@@ -2,9 +2,22 @@
 
 As written, the **[Webserver playbook](/Ansible/webserver.yml)** will install and enable `dwva`, `filebeat`, and `metricbeat` on the Webserver VM's
 
-Each role directory must be configured with its own contents, and the corresponding directories contain all the files needed.
+The playbook is duplicated below.
+
+```yaml
+---
+- become: true
+  hosts: webservers
+  name : Installing DVWA with Docker
+  roles:
+    - dvwa
+    - filebeat
+    - metricbeat
+```
 
 #### Directory Structure:
+
+Each role directory must be configured with its own contents, and the corresponding directories contain all the files needed.
 
 ```
 /etc/
