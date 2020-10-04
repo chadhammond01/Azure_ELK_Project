@@ -124,11 +124,11 @@ This ELK server is configured to monitor the following machines:
 | Web-3     | 10.1.0.6   |
 | Web-4     | 10.1.0.7   |
 
-The following Beats on these machines, allowing the collection of the following information from each machine:
+The following Beats are intsalled on these machines, allowing the collection of the following information from each machine:
 
 - **Filebeat**: detects changes to the filesystem. Specifically, used to collect Apache logs.
 - **Metricbeat**:  detects changes in system metrics. Detects SSH login attempts, failed `sudo` escalations, and CPU/RAM statistics.
-
+<p></p>
 The playbook below installs Metricbeat on the target hosts. The playbook for installing Filebeat is not included, but looks essentially identical — simply replace metricbeat with filebeat, and it will work as expected.
 
 ```yaml
