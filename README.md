@@ -8,6 +8,7 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
+---
 ### Description of the Topology
 
 The files in this repository were used to configure the network in Azure as depicted below.
@@ -37,6 +38,7 @@ The load balancer's targets are organized into the following availability zones:
 - **Availability Zone 1**: Web-1 + Web-2
 - **Availability Zone 2**: Web-3 + Web-4
 
+---
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
@@ -50,6 +52,7 @@ A summary of the access policies in place can be found in the Azure screenshot b
 
 ![](Images/azurensgrules.PNG)
 
+---
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
@@ -110,6 +113,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ![ELK Container](Images/elkdocker.PNG)
 
+---
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
@@ -122,8 +126,8 @@ This ELK server is configured to monitor the following machines:
 
 The following Beats on these machines, allowing the collection of the following information from each machine:
 
-- **Filebeat**: Filebeat detects changes to the filesystem. Specifically, used to collect Apache logs.
-- **Metricbeat**: Metricbeat detects changes in system metrics. Detects SSH login attempts, failed `sudo` escalations, and CPU/RAM statistics.
+- **Filebeat**: detects changes to the filesystem. Specifically, used to collect Apache logs.
+- **Metricbeat**:  detects changes in system metrics. Detects SSH login attempts, failed `sudo` escalations, and CPU/RAM statistics.
 
 The playbook below installs Metricbeat on the target hosts. The playbook for installing Filebeat is not included, but looks essentially identical — simply replace metricbeat with filebeat, and it will work as expected.
 
@@ -152,6 +156,7 @@ The playbook below installs Metricbeat on the target hosts. The playbook for ins
     enabled: yes
  ```
 
+---
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
