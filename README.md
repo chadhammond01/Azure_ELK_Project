@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![Network Diagram](https://github.com/chadhammond01/Azure_ELK_Project/blob/main/Diagrams/Network%20Diagram.PNG)
+![Network Diagram](https://github.com/chadhammond01/Azure_ELK_Project/blob/main/Diagrams/Azure%20Network%20Diagram.PNG)
 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above.
