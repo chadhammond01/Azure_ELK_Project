@@ -55,7 +55,7 @@ A summary of the access policies in place can be found in the Azure screenshot b
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - _TODO: What is the main advantage of automating configuration with Ansible?_
 
-The playbook implements the following tasks:
+The **[Elkserver playbook](Ansible/elkserver.yml)** implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...
 - ...
@@ -93,7 +93,7 @@ The playbook implements the following tasks:
         state: present
         reload: yes
 
-    - name: download and launch a docker elk container
+    - name: Download and Launch a docker elk container
       docker_container:
         name: elk
         image: sebp/elk:761
@@ -120,13 +120,37 @@ This ELK server is configured to monitor the following machines:
 | Web-3     | 10.1.0.6   |
 | Web-4     | 10.1.0.7   |
 
-The following Beats on these machines:
-- Filebeat
-- Metricbeat
+The following Beats on these machines, allowing the collection of the following information from each machine:
 
-These beats allow the collection of the following information from each machine:
 - **Filebeat**: Filebeat detects changes to the filesystem. Specifically, used to collect Apache logs.
 - **Metricbeat**: Metricbeat detects changes in system metrics. Detects SSH login attempts, failed `sudo` escalations, and CPU/RAM statistics.
+
+The playbook below installs Metricbeat on the target hosts. The playbook for installing Filebeat is not included, but looks essentially identical — simply replace metricbeat with filebeat, and it will work as expected.
+
+```yaml
+- name: download metricbeat deb
+  command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb
+
+- name: install metricbeat deb
+  command: dpkg -i metricbeat-7.4.0-amd64.deb
+
+- name: drop in metricbeat.yml
+  copy:
+    src: /etc/ansible/roles/metricbeat/files/metricbeat-config.yml
+    dest: /etc/metricbeat/metricbeat.yml
+
+- name: enable and configure system module
+  command: metricbeat modules enable system
+
+- name: setup metricbeat
+  command: metricbeat setup
+
+- name: start metricbeat service
+  systemd:
+    name: metricbeat
+    state: started
+    enabled: yes
+ ```
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
