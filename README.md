@@ -193,10 +193,13 @@ After this, the commands below run the playbook:
 
  ```bash
  $ cd /etc/ansible
- $ ansible-playbook elkserver.yml elk
  $ ansible-playbook webserver.yml webservers
+ $ ansible-playbook elkserver.yml elk
  ```
+ 
+To verify successfull installation on the webservers, run `curl http://10.1.0.6:80/setup.php`.  
+If the installation succeeded, this command should print HTML to the console.
 
-To verify success, wait five minutes to give ELK time to start up. 
-
-Then, run: `curl http://10.1.0.5:5601/app/kibana`. This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
+To verify success of the ELK server, wait five minutes to give ELK time to start up.  
+Then, run: `curl http://10.1.0.5:5601/app/kibana`.  
+If the installation succeeded, this command should print HTML to the console.
