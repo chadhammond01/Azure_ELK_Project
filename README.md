@@ -5,9 +5,8 @@ The files in this repository were used to configure the network depicted below.
 ![Network Diagram](https://github.com/chadhammond01/Azure_ELK_Project/blob/main/Diagrams/Azure%20Network%20Diagram.PNG)
 
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above.
-
-_Alternatively, select portions of the webservers.yml file may be used to install only certain pieces of it, such as Filebeat._
+<p>These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above.
+_Alternatively, select portions of the webservers.yml file may be used to install only certain pieces of it, such as Filebeat._</p>
 
   - [Webservers Playbook](https://github.com/chadhammond01/Azure_ELK_Project/tree/main/Ansible)
 
