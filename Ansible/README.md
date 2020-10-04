@@ -15,6 +15,7 @@ Each role directory must be configured with its own contents, and the correspond
 /etc/
   ansible/
     hosts
+    ansible.cfg
     webserver.yml
     elkserver.yml
     roles/
