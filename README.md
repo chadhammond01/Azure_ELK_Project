@@ -10,19 +10,16 @@ This document contains the following details:
 
 ### Description of the Topology
 
-The files in this repository were used to configure the network depicted below.
+The files in this repository were used to configure the network in Azure as depicted below.
 
 ![Network Diagram](https://github.com/chadhammond01/Azure_ELK_Project/blob/main/Diagrams/Azure%20Network%20Diagram.PNG)
 
-These files have been used to generate a live ELK deployment on Azure as pictured above.  
 _Alternatively, select portions of the webservers.yml file may be used to install only certain pieces of it, such as Filebeat._
 
   - [Webservers Playbook](https://github.com/chadhammond01/Azure_ELK_Project/tree/main/Ansible)
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-
-Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. The load balancer ensures that work to process incoming traffic will be shared by both vulnerable web servers.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.  
+Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. The load balancer ensures that work to process incoming traffic will be shared by both vulnerable web servers. Access controls will ensure that only authorized users will be able to connect.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 - _TODO: What does Filebeat watch for?_
