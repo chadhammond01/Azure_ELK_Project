@@ -44,10 +44,10 @@ Each role directory must be configured with its own contents, and the correspond
 ```
 ---
 ### Using the Playbook
-In order to use the playbooks, you will need to have an Ansible Control Node already configured. The diagramed **Jump Box** has been configured for this purpose. 
+In order to use the playbook, you will need to have an Ansible Control Node already configured. 
 
 SSH into the control node and follow the steps below:
-- Copy the playbooks to the Ansible Control Node **(Jump Box)**
+- Copy the playbooks to the Ansible Control Node
 - Run each playbook on the appropriate targets
 
 The easiest way to copy the playbooks is to use Git:
