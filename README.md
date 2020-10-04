@@ -41,12 +41,10 @@ The load balancer's targets are organized into the following availability zones:
 ---
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet. 
+The machines on the internal network are not exposed to the public Internet, and can only be accessed internally.  
 
 Only the **Jump Box** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - 67.164.160.6
-
-Machines _within_ the network can only be accessed internally.  
 
 A summary of the access policies in place can be found in the Azure screenshot below.
 
@@ -59,9 +57,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - _TODO: What is the main advantage of automating configuration with Ansible?_
 
 The **[Elkserver playbook](Ansible/elkserver.yml)** implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install Docker.io
+- Install pip3
+- Install Docker python module
+- Increase virtual memory for ELK
+- Download and launch ELK container
 
 ```yaml
 ---
@@ -158,16 +158,45 @@ The playbook below installs Metricbeat on the target hosts. The playbook for ins
 
 ---
 ### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+In order to use the playbooks, you will need to have an Ansible Control Node already configured. The diagramed **Jump Box** has been configured for this purpose. 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the playbooks to the Ansible Control Node **(Jump Box)**
+- Run each playbook on the appropriate targets
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+The easiest way to copy the playbooks is to use Git:
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+```bash
+$ cd /etc/ansible
+# Clone Repository + IaC Files
+$ git clone https://github.com/chadhammond01/Azure_ELK_Project.git
+# Move Playbooks, roles, and hosts files Into `/etc/ansible`
+$ cp Azure_ELK_Project/Ansible/* -R .
+```
+
+This copies the playbooks and required files to the correct place.
+
+Next, you must edit the `hosts` file to specify which VMs to run each playbook on.
+
+```
+ [webservers]
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+10.1.0.6 ansible_python_interpreter=/usr/bin/python3
+10.1.0.7 ansible_python_interpreter=/usr/bin/python3
+
+ [elkservers]
+10.1.0.5 ansible_python_interpreter=/usr/bin/python3
+```
+
+After this, the commands below run the playbook:
+
+ ```bash
+ $ cd /etc/ansible
+ $ ansible-playbook elkserver.yml elk
+ $ ansible-playbook webserver.yml webservers
+ ```
+
+To verify success, wait five minutes to give ELK time to start up. 
+
+Then, run: `curl http://10.1.0.5:5601/app/kibana`. This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
