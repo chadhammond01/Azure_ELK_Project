@@ -128,7 +128,8 @@ The following Beats are intsalled on these machines, allowing the collection of 
 
 - **Filebeat**: detects changes to the filesystem. Specifically, used to collect Apache logs.
 - **Metricbeat**:  detects changes in system metrics. Detects SSH login attempts, failed `sudo` escalations, and CPU/RAM statistics.
-<p></p>
+
+
 The playbook below installs Metricbeat on the target hosts. The playbook for installing Filebeat is not included, but looks essentially identical — simply replace metricbeat with filebeat, and it will work as expected.
 
 ```yaml
@@ -197,9 +198,7 @@ After this, the commands below run the playbook:
  $ ansible-playbook elkserver.yml elk
  ```
  
-To verify successfull installation on the webservers, run `curl http://10.0.0.6:80/setup.php`.  
-If the installation succeeded, this command should print HTML to the console.
+To verify successfull installation on the webservers, run `curl http://10.0.0.6:80/setup.php`. If the installation succeeded, this command should print HTML to the console.
 
 To verify success of the ELK server, wait five minutes to give ELK time to start up.  
-Then, run: `curl http://10.1.0.5:5601/app/kibana`.  
-If the installation succeeded, this command should print HTML to the console.
+Then, run: `curl http://10.1.0.5:5601/app/kibana`. If the installation succeeded, this command should print HTML to the console.
