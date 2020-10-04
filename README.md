@@ -176,7 +176,7 @@ $ cp Azure_ELK_Project/Ansible/* -R .
 
 This copies the playbooks and required files to the correct place.
 
-Next, you must edit the `hosts` file to specify which VMs to run each playbook on.
+Next, you must edit the `hosts` file to specify which VMs to run each playbook on. For example:
 
 ```
  [webservers]
@@ -197,7 +197,7 @@ After this, the commands below run the playbook:
  $ ansible-playbook elkserver.yml elk
  ```
  
-To verify successfull installation on the webservers, run `curl http://10.1.0.6:80/setup.php`.  
+To verify successfull installation on the webservers, run `curl http://10.0.0.6:80/setup.php`.  
 If the installation succeeded, this command should print HTML to the console.
 
 To verify success of the ELK server, wait five minutes to give ELK time to start up.  
