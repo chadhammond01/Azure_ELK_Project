@@ -1,14 +1,5 @@
 ## Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted below.
-
-![Network Diagram](https://github.com/chadhammond01/Azure_ELK_Project/blob/main/Diagrams/Azure%20Network%20Diagram.PNG)
-
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above.  
-_Alternatively, select portions of the webservers.yml file may be used to install only certain pieces of it, such as Filebeat._
-
-  - [Webservers Playbook](https://github.com/chadhammond01/Azure_ELK_Project/tree/main/Ansible)
-
 This document contains the following details:
 - Description of the Topology
 - Access Policies
@@ -17,12 +8,20 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-
 ### Description of the Topology
+
+The files in this repository were used to configure the network depicted below.
+
+![Network Diagram](https://github.com/chadhammond01/Azure_ELK_Project/blob/main/Diagrams/Azure%20Network%20Diagram.PNG)
+
+These files have been used to generate a live ELK deployment on Azure as pictured above.  
+_Alternatively, select portions of the webservers.yml file may be used to install only certain pieces of it, such as Filebeat._
+
+  - [Webservers Playbook](https://github.com/chadhammond01/Azure_ELK_Project/tree/main/Ansible)
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. The load balancer ensures that work to process incoming traffic will be shared by both vulnerable web servers.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
@@ -32,22 +31,23 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name      | Function  | IP Address | Operating System |
+|-----------|-----------|------------|------------------|
+| Jump Box  | Gateway   | 10.0.0.5   | Linux            |
+| Web-1     | Webserver | 10.0.0.6   | Linux            |
+| Web-2     | Webserver | 10.0.0.7   | Linux            |
+| Web-3     | Webserver | 10.1.0.6   | Linux            |
+| Web-4     | Webserver | 10.1.0.7   | Linux            |
+| ELK Stack | Monitor   | 10.1.0.5   | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 67.164.160.6
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the Jump Box.  
 
 A summary of the access policies in place can be found in the table below.
 
