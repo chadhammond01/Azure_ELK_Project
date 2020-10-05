@@ -4,7 +4,7 @@
   command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.9.2-amd64.deb
 
 - name: install metricbeat deb
-  command: dpkg -i metricbeat-7.9.2-amd64.deb
+  command: dpkg --force-overwrite -i metricbeat-7.9.2-amd64.deb
 
 - name: drop in metricbeat.yml
   copy:

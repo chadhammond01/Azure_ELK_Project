@@ -4,7 +4,7 @@
   command: curl -L -O https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-7.9.2-amd64.deb
  
 - name: install heartbeat deb
-  command: dpkg -i heartbeat-7.9.2-amd64.deb
+  command: dpkg --force-overwrite -i heartbeat-7.9.2-amd64.deb
 
 - name: drop in heartbeat.yml 
   copy:
