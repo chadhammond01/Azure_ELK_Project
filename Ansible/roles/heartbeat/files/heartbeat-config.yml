@@ -129,7 +129,7 @@ processors:
       # Optional, but recommended geo settings for the location Heartbeat is running in
       #geo:
         # Token describing this location
-        name: Web
+        # name: Web
         # Lat, Lon "
         #location: "37.926868, -78.024902"
 

@@ -7,10 +7,10 @@
     name: curl
 
 - name: download filebeat deb
-  command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+  command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.9.2-amd64.deb
 
 - name: install filebeat deb
-  command: dpkg -i filebeat-7.4.0-amd64.deb
+  command: dpkg -i filebeat-7.9.2-amd64.deb
 
 - name: drop in filebeat.yml
   copy:
