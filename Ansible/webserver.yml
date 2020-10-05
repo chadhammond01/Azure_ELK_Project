@@ -2,7 +2,7 @@
 # webserver.yml
 - become: true
   hosts: webservers
-  name : Installing DVWA with Docker
+  name : Installing DVWA with Docker and Beats
   roles:
     - dvwa
     - filebeat
