@@ -1,5 +1,5 @@
 ---
-# Filebeat main.yml
+# Filebeat Role main.yml
 - name: Install curl
   apt:
     update_cache: yes
