@@ -18,7 +18,7 @@
     dest: /etc/filebeat/filebeat.yml
 
 - name: enable and configure system module
-  command: filebeat modules enable system
+  command: filebeat modules enable system azure apache
 
 - name: setup filebeat
   command: filebeat setup
