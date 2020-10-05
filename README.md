@@ -128,6 +128,8 @@ The following Beats are intsalled on these machines, allowing the collection of 
 
 - **Filebeat**: detects changes to the filesystem. Specifically, used to collect Apache logs.
 - **Metricbeat**:  detects changes in system metrics. Detects SSH login attempts, failed `sudo` escalations, and CPU/RAM statistics.
+- **Heartbeat**:
+- **Packetbeat**:
 
 
 The playbook below installs Metricbeat on the target hosts. The playbook for installing Filebeat is not included, but looks essentially identical — simply replace metricbeat with filebeat, and it will work as expected.
