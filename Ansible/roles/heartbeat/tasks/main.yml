@@ -1,0 +1,21 @@
+---
+# Heartbeat main.yml
+- name: download heartbeat deb
+  command: curl -L -O https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-7.6.1-amd64.deb
+ 
+- name: install heartbeat deb
+  command: dpkg -i heartbeat-7.6.1-amd64.deb
+
+- name: drop in heartbeat.yml 
+  copy:
+    src: /etc/ansible/roles/heartbeat/files/heartbeat-config.yml
+    dest: /etc/heartbeat/heartbeat.yml
+
+- name: setup heartbeat
+  command: heartbeat setup
+
+- name: start heartbeat service
+  systemd: 
+    name: heartbeat-elastic 
+    state: started
+    enabled: yes
