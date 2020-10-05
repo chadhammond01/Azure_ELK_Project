@@ -68,7 +68,6 @@ The **[Elkserver playbook](Ansible/elkserver.yml)** implements the following tas
 # elkserver.yml
 - name: Configure Elk VM with Docker
   hosts: elkservers
-  remote_user: elk
   become: true
   tasks:
 
