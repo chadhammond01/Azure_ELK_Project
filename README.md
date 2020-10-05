@@ -137,7 +137,7 @@ The playbook below installs the beats on the target hosts, setup as roles in Ans
 # webserver.yml
 - become: true
   hosts: webservers
-  name : Installing DVWA with Docker
+  name : Installing Beats and DVWA with Docker
   roles:
     - dvwa
     - filebeat
