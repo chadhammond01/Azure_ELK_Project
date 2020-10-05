@@ -1,0 +1,11 @@
+---
+# webserver.yml
+- become: true
+  hosts: webservers
+  name : Installing DVWA with Docker
+  roles:
+    - dvwa
+    - filebeat
+    - metricbeat
+    - heartbeat
+    - packetbeat
