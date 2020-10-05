@@ -33,7 +33,7 @@
     - name: download and launch a docker elk container
       docker_container:
         name: elk
-        image: sebp/elk:761
+        image: sebp/elk:792
         state: started
         restart_policy: always
         # Please list the ports ELK runs on
