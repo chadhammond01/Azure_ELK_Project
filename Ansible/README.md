@@ -14,6 +14,8 @@ The playbook is duplicated below. To skip installation of a specific role, simpl
     - dvwa
     - filebeat
     - metricbeat
+    - heartbeat
+    - packetbeat
 ```
 
 #### Directory Structure for Roles:
