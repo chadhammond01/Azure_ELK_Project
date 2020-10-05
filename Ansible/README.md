@@ -72,7 +72,7 @@ After this, the commands below run the playbook:
 
  ```bash
  $ cd /etc/ansible
- $ ansible-playbook webserver.yml webservers
+ $ ansible-playbook webserver.yml
  ```
  
 To verify success, run `curl http://10.0.0.6:80/setup.php` If the installation succeeded, this command should print HTML to the console.
