@@ -131,7 +131,7 @@ The following Beats are intsalled on these machines, allowing the collection of 
 - **Heartbeat**:
 - **Packetbeat**:
 
-The playbook below installs the beats on the target hosts, setup as roles in Ansible
+The playbook below installs the beats on the target hosts, setup as roles in Ansible. See this **[README](Ansible)** for more info on roles.
 
 ```yaml
 # webserver.yml
