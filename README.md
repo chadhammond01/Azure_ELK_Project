@@ -131,6 +131,20 @@ The following Beats are intsalled on these machines, allowing the collection of 
 - **Heartbeat**:
 - **Packetbeat**:
 
+The playbook below installs the beats on the target hosts, setup as roles in Ansible
+
+```yaml
+# webserver.yml
+- become: true
+  hosts: webservers
+  name : Installing DVWA with Docker
+  roles:
+    - dvwa
+    - filebeat
+    - metricbeat
+    - heartbeat
+    - packetbeat
+```
 
 The playbook below installs Metricbeat on the target hosts. The playbooks for installing the other beats all look essentially identical.
 
