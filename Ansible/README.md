@@ -43,6 +43,16 @@ Each role directory must be configured with its own contents, and the correspond
           main.yml
         files/
           metricbeat-config.yml
+      heartbeat/
+        tasks/
+          main.yml
+        files/
+          heartbeat-config.yml
+      packetbeat/
+        tasks/
+          main.yml
+        files/
+          packetbeat-config.yml
 ```
 ---
 ### Using the Playbook
