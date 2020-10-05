@@ -10,7 +10,7 @@
   command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.9.2-amd64.deb
 
 - name: install filebeat deb
-  command: dpkg --force-overwrite -i filebeat-7.9.2-amd64.deb
+  command: dpkg --force-overwrite,confnew -i filebeat-7.9.2-amd64.deb
 
 - name: drop in filebeat.yml
   copy:
