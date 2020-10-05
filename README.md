@@ -132,7 +132,7 @@ The following Beats are intsalled on these machines, allowing the collection of 
 - **Packetbeat**:
 
 
-The playbook below installs Metricbeat on the target hosts. The playbook for installing Filebeat is not included, but looks essentially identical — simply replace metricbeat with filebeat, and it will work as expected.
+The playbook below installs Metricbeat on the target hosts. The playbooks for installing the other beats all look essentially identical.
 
 ```yaml
 - name: download metricbeat deb
